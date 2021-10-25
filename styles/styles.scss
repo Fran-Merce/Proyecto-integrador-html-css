@@ -1,0 +1,753 @@
+@import url("https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Italianno&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Gothic+A1:wght@300;500;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Cabin&display=swap");
+
+@import url("https://fonts.googleapis.com/css2?family=Patrick+Hand&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  outline: none;  
+  text-decoration: none;
+  list-style: none;
+  scroll-behavior: smooth;
+  font-size: 16px;
+}
+
+// MIXIN
+
+@mixin color {
+  background-image: linear-gradient(315deg, #f7b42c 0%, #fc575e 74%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+@mixin button-white {
+  position: relative;
+  margin-top: 2em;
+  margin-bottom: 1em;
+  width: 125px;
+  background-color: rgb(255, 255, 255);
+  height: 35px;
+  text-align: center;
+  padding: 7px;
+  color: rgb(0, 0, 0);
+  font-family: "Montserrat", sans-serif;
+  font-weight: 700;
+  border: transparent solid 2px;
+  transition: all 0.4s;
+
+  p {
+    position: relative;
+    z-index: 100;
+    transition: color 0.2s;
+  }
+
+  // HOVER EFECT BUTTON
+
+  &::before {
+    content: "";
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 0;
+    height: 100%;
+    background-color: rgb(0, 0, 0);
+    transition: width 0.5s;
+  }
+
+  &:hover::before,
+  &:hover p {
+    width: 100%;
+    color: rgb(255, 255, 255);
+  }
+
+  &:hover {
+    border: 2px solid rgb(255, 255, 255);
+  }
+}
+
+
+
+.header {
+  width: 100%;
+  height: 100vh;
+  background-image: url(/assets/imgs/eric-nopanen-8e0EHPUx3Mo-unsplash.jpg);
+  background-position: center;
+  background-size: cover;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+
+  h1,
+  span {
+    font: 5rem "Dancing Script";
+    text-align: center;
+
+    span {
+      color: #fff;
+    }
+  }
+
+  &__arrow {
+    width: 60px;
+    padding-bottom: 2rem;
+    animation: arrow 0.5s infinite forwards alternate;
+  }
+
+  @keyframes arrow {
+    from {
+      transform: translateY(5px);
+    }
+
+    to {
+      transform: translateY(-5px);
+    }
+  }
+}
+
+.logo,
+.nav__ul,
+.nav__search {
+  padding: 0 2em;
+}
+
+.nav {
+  width: 100%;
+  height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: rgb(255, 255, 255);
+
+  .logo__ancla {
+    height: 80%;
+  }
+  .logo__img {
+    height: 100%;
+  }
+
+  
+  li {
+    display: inline-block;
+    margin: 0 10px;
+
+    a {
+      color: rgb(0, 0, 0);
+      font: 1.2em "Bebas Neue", cursive;
+      position: relative;
+      
+// ANIMATION HOVER LI
+      &::after {
+        content: "";
+        position: absolute;
+        width: 0%;
+        height: 3px;
+        background-color: #000000;
+        bottom: 0;
+        left: 0;
+        transition: width 0.3s;
+      }
+
+      &:hover::after {
+        width: 100%;
+      }
+    }
+  }
+}
+
+main {
+  background-color: rgb(16, 16, 16);
+}
+
+.section1 {
+  width: 100%;
+  height: 80vh;
+  display: flex;
+  flex-direction: row-reverse;
+  flex-wrap: wrap;
+
+  .section1__img-container {
+    width: 60%;
+    height: 100%;
+    background-image: url(https://cdn.pixabay.com/photo/2015/12/27/05/48/turntable-1109588_960_720.jpg);
+    background-size: cover;
+  }
+
+  .section1__info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 40%;
+    background-color: #000000;
+    color: rgb(255, 255, 255);
+
+    h2 {
+      text-align: center;
+      margin: 1em 0;
+      font: 3em "Dancing Script";
+      font-weight: 300;
+
+      span {
+        font: 1em "Dancing Script";
+      }
+    }
+
+    .section1__text,
+    .section1__second-text {
+      width: 70%;
+      text-align: center;
+      font-family: "Patrick Hand", cursive;
+    }
+    span {
+      @include color;
+    }
+
+    .section1__second-text,
+    span {
+      margin-top: 3em;
+      font-size: 1.1em;
+      text-align: center;
+    }
+
+    .button {
+      @include button-white;
+      cursor: pointer;
+
+      p {
+        font-family: "dancing script";
+        font-size: 1.3em;
+      }
+
+      &::before {
+        left: 0;
+      }
+
+      
+    }
+  }
+}
+
+.section2 {
+  height: 37.5rem;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  .section2__img-container {
+    width: 55%;
+    height: 100%;
+    background-image: url(/assets/imgs/paulette-wooten-FMiczIq8orU-unsplash.jpg);
+    background-size: cover;
+    background-position: center;
+  }
+
+  .section2__info {
+    width: 45%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    background-color: rgb(255, 255, 255);
+
+    h2 {
+      text-align: center;
+      margin: 0.5em 0;
+      font: 3.5em "Dancing Script";
+      font-weight: 700;
+      background-image: linear-gradient(315deg, #f83741 0%, #897df7bf 75%);
+      background-clip: text;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .section2__text {
+      width: 65%;
+      text-align: center;
+      font-family: "Patrick Hand", cursive;
+      font-weight: 300;
+      color: #202021bf;
+
+      span {
+        background-image: linear-gradient(315deg, #f83741 0%, #1900fcbf 75%);
+        background-clip: text;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+      }
+    }
+  }
+}
+
+/* !----------------------------------------------PRODUCTS-------------------------------------------------------- */
+.section3 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-bottom: 1px solid transparent;
+  border-image: linear-gradient(315deg, #9fa4c4 0%, #9e768f 74%) 1;
+  padding-bottom: 2em;
+
+  .products {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    padding: 2em 0;
+  }
+
+  .h2-cont {
+    @include color;
+    padding-top: 3em;
+    text-align: center;
+    color: rgb(255, 255, 255);
+    
+    h2 {
+      font-size: 3.5em;
+      font-family: "dancing script";
+    }
+  }
+
+  // ----PRODUCT CARD-----------------------------
+  .product {
+    width: 21.25rem;
+    height: 400px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    background-color: rgb(255, 255, 255);
+    margin: 1em;
+    margin-bottom: 2rem;
+    box-shadow: 0 0 4px 1px rgb(100, 100, 100);
+    transition: all 1s;
+
+    .product__name {
+      display: block;
+      margin: 2em 0;
+      font-size: 1.3em;
+    }
+
+    img {
+      height: 50%;
+      width: 80%;
+      margin-bottom: 2em;
+    }
+
+    div{
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      margin: 1em;
+    }
+
+    .price {
+      font-size: 1.2em;
+    }
+
+    .cuotes {
+      @include color;
+      font-family: "Cabin", sans-serif;
+    }
+
+    .product__button {
+      margin-left: 1em;
+    }
+    .buy__container{
+      width: 100%;
+      height: 100%;
+      background-color: rgba(63, 63, 63, 0.659);
+      transform: scale(0);
+      margin: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      // !BUTTON BUY ANMIMATION
+      a{
+        position: relative;
+        width: 125px;
+        height: 35px;
+        background-color: white;
+        text-align: center;
+        border-radius: 3px;
+        overflow: hidden;
+
+        p{
+          font-size: 1.2rem;
+          font-family: sans-serif;
+          color: rgb(0, 0, 0);
+          z-index: 1000;
+          width: 125px;
+          height: 35px;
+          padding: 7px;
+          transition: .3s;
+          &:hover{
+            color: white;
+
+          }
+        }
+        &::before,&::after{
+          content: '';
+          position: absolute;
+          top: 0;
+          
+          width: 0%;
+          height: 100%;
+          background-color: #000000;
+          transition: all .3s;
+          z-index: -1;
+        }
+        &::before{
+          left: 0;
+          border-radius: 3px 0 0 3px
+        }
+        &::after{
+          border-radius: 0 3px 3px 0;
+          right: 0;
+        }
+        &:hover::before,
+        &:hover::after{
+          width: 50%;
+        }
+      }
+    }
+
+    &:hover .product__buy,
+    &:hover .buy__container{
+      transform: scale(1);
+    }  
+  }
+
+  .button {
+    @include button-white;
+    cursor: pointer;
+    p {
+      font-family: "dancing script";
+      font-size: 1.3em;
+    }
+  }
+}
+
+
+
+
+
+
+.gallery{
+  
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  h2{
+    padding: 1em 0;
+    color: white;
+    font-family: "dancing script";
+    font-size: 3rem;
+    text-align: center;
+  }
+  div{
+    margin-top: 3em;
+    min-height: 600px;
+    width: 60%;
+    gap: 20px;
+    columns: 4 200px;
+  }
+  
+  img{
+    max-width:100%;
+    // object-fit: cover;
+  }
+}
+
+
+
+
+
+
+
+/* -------------------------------------------------SECTION CARDS---------------------------------------------- */
+
+.section__cards h2 {
+  font-size: 2.5em;
+  text-align: center;
+  margin-top: 2em;
+  color: #fff;
+  font-family: "dancing script";
+  background-image: linear-gradient(315deg, #fa000d 0%, #897df7 75%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.cards {
+  width: 100%;
+  min-height: 40rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+
+  .img-bg {
+    filter: grayscale(100%);
+    position: absolute;
+    height: 60%;
+    width: 80%;
+  }
+
+  .card {
+    width: 20rem;
+    height: 24rem;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    flex-direction: column;
+    box-shadow: 0px 0px 4px 1px rgba(0, 0, 0, 0.5);
+    border-radius: 25px;
+    background-color: #ffffffcb;
+
+    img {
+      height: 40%;
+      border-radius: 50%;
+      margin-top: 2em;
+      transition: transform 0.5s;
+    }
+
+    &:hover img {
+      transform: scale(1.15);
+    }
+
+    .card-info {
+      text-align: center;
+      margin-bottom: 2em;
+      font-family: "Cabin", sans-serif;
+
+      p {
+        font-size: 1.1em;
+      }
+    }
+
+    .social {
+      position: absolute;
+      bottom: 0;
+      align-self: flex-start;
+      margin: 1em;
+    }
+
+    i {
+      font-size: 1.5em;
+    }
+  }
+
+  .card1 {
+    z-index: 5;
+    transition: transform 0.5s;
+    transform: rotate(-10deg);
+
+    &:hover {
+      transform: rotate(0);
+      z-index: 200;
+    }
+  }
+
+  .card2 {
+    transition: transform 0.5s;
+
+    &:hover {
+      transform: translateY(-3em);
+    }
+  }
+
+  .card3 {
+    z-index: 10;
+    transform: rotate(10deg);
+    transition: transform 0.5s;
+    margin-left: -10px;
+
+    &:hover {
+      transform: rotate(0);
+    }
+  }
+}
+
+
+
+/* ----------------------------FOOTER------------------------- */
+
+.footer {
+  width: 100%;
+  height: 200px;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  background-color: rgb(255, 255, 255);
+  font-family: "Bebas Neue", cursive;
+  flex-wrap: wrap;
+
+  div {
+    p {
+      display: inline-block;
+      margin: 0.6em 0;
+      cursor: default;
+    }
+
+    .footer__arrow:hover,
+    .footer__email-container:hover,
+    .footer__phone-container:hover {
+      @include color;
+    }
+  }
+}
+
+.footer__social i {
+  font-size: 1.6em;
+}
+
+.footer__arrow {
+  font-size: 3em;
+  width: 100%;
+  transition: transform 0.3s;
+
+  &:hover {
+    transform: scale(1.2);
+  }
+}
+
+.footer__arrow:visited,
+.footer__arrow {
+  color: #000000;
+  cursor: pointer;
+}
+
+.footer__arrow:hover {
+  @include color;
+}
+
+.fa-facebook:hover {
+  color: #385898;
+}
+
+.fa-instagram:hover {
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-image: linear-gradient(#5851db,
+      #833ab4,
+      #c13584,
+      #e1306c,
+      #fd1d1d);
+}
+
+.fa-linkedin:hover {
+  color: #0a66c2;
+}
+
+@media screen and (max-width: 1024px) {
+  .button {
+    margin-top: 0.5em;
+  }
+
+  .cards {
+    margin: 0;
+  }
+
+  .card {
+    transform: rotate(0);
+    margin: 0.7em;
+    margin-top: 2em;
+  }
+}
+
+@media screen and (max-width: 768px) {
+
+  .logo,
+  .nav__ul,
+  .nav__search {
+    padding: 0;
+  }
+
+  .section1,
+  .section2 {
+    height: 150vh;
+    flex-direction: column-reverse;
+  }
+
+  .section1 {
+
+    .section1__img-container,
+    .section1__info {
+      width: 100%;
+    }
+
+    .section1__img-container {
+      height: 40%;
+    }
+
+    .section1__info {
+      height: 60%;
+      padding: 0.5em;
+    }
+  }
+
+  .section2 {
+
+    .section2__img-container,
+    .section2__info {
+      width: 100%;
+    }
+  }
+
+  .section2 {
+    .section2__img-container {
+      height: 40%;
+    }
+
+    .section2__info {
+      height: 60%;
+    }
+  }
+
+  .cards {
+    .card {
+      background-image: url(/assets/imgs/audiowave.gif);
+      background-size: cover;
+      background-position: center;
+      transform: rotate(0) translate(0);
+    }
+
+    .card2:hover {
+      transform: translate(0);
+    }
+
+    .card3 {
+      margin-left: 0;
+      margin-right: 0;
+    }
+
+    .img-bg {
+      display: none;
+    }
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .footer {
+
+    div,
+    p {
+      display: block;
+      text-align: center;
+      margin: 0.6em 0;
+      width: 100%;
+    }
+  }
+}
