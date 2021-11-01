@@ -947,5 +947,14 @@ main {
   .gallery div {
     width: 100%;
   }
+  .nav li {
+    margin: 7px;
+  }
+  .nav li a {
+    font-size: 1em;
+  }
+  .cards .card {
+    width: 19em;
+  }
 }
 /*# sourceMappingURL=styles.css.map */

@@ -796,4 +796,19 @@ main {
       width: 100%;
     }
   }
+
+  .nav{
+    li{
+      margin: 7px;
+      a{
+        font-size: 1em
+      }
+    } 
+  }
+
+  .cards{
+    .card{
+      width: 19em;
+    }
+  }
 }
