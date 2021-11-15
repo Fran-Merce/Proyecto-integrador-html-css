@@ -799,6 +799,18 @@ main {
   color: red;
 }
 
+.footer__social a {
+  color: #000000;
+}
+
+.footer__social a:visited {
+  color: #000000;
+}
+
+.footer__social a:hover {
+  color: #313131;
+}
+
 .footer__social i {
   font-size: 1.6em;
 }
