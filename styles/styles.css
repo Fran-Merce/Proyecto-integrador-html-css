@@ -8,7 +8,6 @@
   padding: 0;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
-  outline: none;
   text-decoration: none;
   list-style: none;
   scroll-behavior: smooth;
@@ -28,7 +27,7 @@ body::-webkit-scrollbar-thumb {
 .header {
   width: 100%;
   height: 100vh;
-  background-size: cover;
+  position: relative;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -42,9 +41,7 @@ body::-webkit-scrollbar-thumb {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  background-image: url(/assets/imgs/eric-nopanen-8e0EHPUx3Mo-unsplash.jpg);
-  background-position: center;
-  background-attachment: fixed;
+  background: url(/assets/imgs/eric-nopanen-8e0EHPUx3Mo-unsplash.jpg) no-repeat fixed center;
 }
 
 .header h1,
@@ -65,28 +62,6 @@ body::-webkit-scrollbar-thumb {
           animation: arrow 0.5s infinite forwards alternate;
 }
 
-@-webkit-keyframes arrow {
-  from {
-    -webkit-transform: translateY(5px);
-            transform: translateY(5px);
-  }
-  to {
-    -webkit-transform: translateY(-5px);
-            transform: translateY(-5px);
-  }
-}
-
-@keyframes arrow {
-  from {
-    -webkit-transform: translateY(5px);
-            transform: translateY(5px);
-  }
-  to {
-    -webkit-transform: translateY(-5px);
-            transform: translateY(-5px);
-  }
-}
-
 .logo,
 .nav__ul,
 .nav__search {
@@ -96,6 +71,7 @@ body::-webkit-scrollbar-thumb {
 .nav {
   width: 100%;
   height: 80px;
+  position: relative;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -106,6 +82,11 @@ body::-webkit-scrollbar-thumb {
       -ms-flex-pack: justify;
           justify-content: space-between;
   background-color: white;
+}
+
+.nav .fa-bars {
+  -webkit-transform: scale(0);
+          transform: scale(0);
 }
 
 .nav .logo__ancla {
@@ -269,10 +250,6 @@ main {
 .section1 .section1__info .button p {
   font-family: "dancing script";
   font-size: 1.3em;
-}
-
-.section1 .section1__info .button::before {
-  left: 0;
 }
 
 .section2 {
@@ -470,13 +447,11 @@ main {
 }
 
 .section3 .product .buy__container a {
-  position: relative;
   width: 125px;
   height: 35px;
   background-color: white;
   text-align: center;
   border-radius: 3px;
-  overflow: hidden;
 }
 
 .section3 .product .buy__container a p {
@@ -487,8 +462,6 @@ main {
   width: 125px;
   height: 35px;
   padding: 7px;
-  -webkit-transition: .3s;
-  transition: .3s;
 }
 
 .section3 .product .buy__container a p:hover {
@@ -501,10 +474,10 @@ main {
   top: 0;
   width: 0%;
   height: 100%;
-  background-color: #000000;
   -webkit-transition: width .3s;
   transition: width .3s;
   z-index: -1;
+  background-color: #000000;
 }
 
 .section3 .product .buy__container a::before {
@@ -870,9 +843,45 @@ main {
 
 @media screen and (max-width: 768px) {
   .logo,
-  .nav__ul,
-  .nav__search {
+  .nav__ul {
     padding: 0;
+  }
+  .nav .nav_ul {
+    width: 100%;
+    height: calc(100vh  - 80px);
+    top: 80px;
+    position: absolute;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: space-evenly;
+        -ms-flex-pack: space-evenly;
+            justify-content: space-evenly;
+    background: #e4e4e4;
+    -webkit-transition: -webkit-transform .2s;
+    transition: -webkit-transform .2s;
+    transition: transform .2s;
+    transition: transform .2s, -webkit-transform .2s;
+    -webkit-transform: translateX(-250%);
+            transform: translateX(-250%);
+    z-index: 2;
+  }
+  .nav .fa-bars {
+    font-size: 2em;
+    margin-right: .5em;
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+  .nav .nav__ul-mobile-clicked {
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
   }
   .section1,
   .section2 {
@@ -951,10 +960,32 @@ main {
     margin: 7px;
   }
   .nav li a {
-    font-size: 1em;
+    font-size: 1.3rem;
   }
   .cards .card {
     width: 19em;
+  }
+}
+
+@-webkit-keyframes arrow {
+  from {
+    -webkit-transform: translateY(5px);
+            transform: translateY(5px);
+  }
+  to {
+    -webkit-transform: translateY(-5px);
+            transform: translateY(-5px);
+  }
+}
+
+@keyframes arrow {
+  from {
+    -webkit-transform: translateY(5px);
+            transform: translateY(5px);
+  }
+  to {
+    -webkit-transform: translateY(-5px);
+            transform: translateY(-5px);
   }
 }
 /*# sourceMappingURL=styles.css.map */

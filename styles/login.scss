@@ -61,9 +61,6 @@ section {
             position: relative;
             padding: 0 1em;
             transition: all 4s;
-            
-            
-
             &:focus {
                 width: 65%;
                 height: 35px;
@@ -71,9 +68,6 @@ section {
                 transform: translateY(7px);
                 
             }
-
-
-
         }
 
         input,
