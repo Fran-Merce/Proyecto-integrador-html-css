@@ -539,6 +539,15 @@ main {
   content: ' \2764';
   color: red;
 }
+.footer__social a{
+  color: #000000;
+  &:visited{
+    color: #000000;
+  }
+  &:hover{
+    color: rgb(49, 49, 49);
+  }
+}
 .footer__social i {
   font-size: 1.6em;
 }

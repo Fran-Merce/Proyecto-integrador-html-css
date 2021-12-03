@@ -3,7 +3,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Comfortaa&display=swap");
 section {
   width: 100%;
-  height: calc(100vh - 80px);
+  min-height: calc(100vh - 80px);
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -21,6 +21,7 @@ section {
 section .login {
   height: 500px;
   width: 500px;
+  margin: 2em 0;
 }
 
 section .login__container {
@@ -147,10 +148,11 @@ section .login__container .sing__button > a {
   width: 135px;
   height: 35px;
   padding-top: 10px;
+  color: #fff;
 }
 
 section .login__container .sing__button > a:visited {
-  color: white;
+  color: #fff;
 }
 
 section .login__container .password__text {
@@ -168,6 +170,7 @@ section .login__container .password__text {
 @media screen and (max-width: 725px) {
   section .login {
     width: 350px;
+    margin: 2em 0;
   }
   section .login__container {
     width: 100%;
@@ -180,6 +183,13 @@ section .login__container .password__text {
   section .login__container input:focus {
     width: 90%;
     margin: 10px 5%;
+  }
+}
+
+@media screen and (max-width: 360px) {
+  section .login {
+    width: 90%;
+    margin: 2em 5%;
   }
 }
 /*# sourceMappingURL=login.css.map */
